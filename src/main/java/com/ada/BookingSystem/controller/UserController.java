@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("users")
+@RequestMapping("api/users")
 public class UserController {
 
     private UserService userService;
@@ -34,7 +34,6 @@ public class UserController {
 
     @DeleteMapping("/{id}")
     public void deleteUser(@PathVariable int id) {
-
         userService.deleteUser(id);
     }
 }

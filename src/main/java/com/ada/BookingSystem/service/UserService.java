@@ -10,6 +10,7 @@ import java.util.Map;
 
 public class UserService {
     private static final Map<Integer, User> userRepository = new HashMap<>();
+
     public List<User> getAllUser() {
         return new ArrayList<>(userRepository.values());
     }
