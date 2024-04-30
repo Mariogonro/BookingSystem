@@ -1,3 +1,6 @@
 com\ada\BookingSystem\BookingSystemApplication.class
 com\ada\BookingSystem\controller\health\HealthController.class
+com\ada\BookingSystem\service\UserService.class
+com\ada\BookingSystem\repository\User.class
+com\ada\BookingSystem\controller\UserController.class
 com\ada\BookingSystem\ServletInitializer.class
