@@ -1,8 +1,8 @@
-package com.ada.BookingSystem.repository;
+package com.ada.BookingSystem.repository.user;
 
 public class User {
 
-    private int id;
+    private final int id;
     private String username;
     private String name;
     private String lastname;
@@ -20,10 +20,6 @@ public class User {
 
     public int getId() {
         return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getUsername() {
