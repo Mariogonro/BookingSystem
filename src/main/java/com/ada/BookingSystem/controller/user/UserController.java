@@ -1,7 +1,8 @@
 package com.ada.BookingSystem.controller.user;
 
 import com.ada.BookingSystem.repository.entity.User;
-import com.ada.BookingSystem.service.impl.UserService;
+import com.ada.BookingSystem.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -15,7 +16,8 @@ public class UserController {
 
     private final UserService userService;
 
-    public UserController(UserService userService) {
+    public UserController( @Autowired UserService userService )
+    {
         this.userService = userService;
     }
 
@@ -27,19 +29,22 @@ public class UserController {
 
     @GetMapping("/{id}")
     public ResponseEntity<User> findById(@PathVariable("id") String id) {
-        Optional<User> user  = userService.findById(id);
-        return ResponseEntity.ok(user.get());
+        User user  = userService.findById(id);
+        return ResponseEntity.ok(user);
     }
+
     @PostMapping
-    public ResponseEntity<User> createProduct(@RequestBody User newUser) {
+    public ResponseEntity<User> createProduct(@RequestBody UserDto userDto) {
         URI createdUserUri = URI.create("");
-        User user = userService.save(newUser);
+        User user = userService.create(userDto);
         return ResponseEntity.created(createdUserUri).body(user);
     }
 
     @PutMapping("/{id}")
-    public User updateUser(@PathVariable String id, @RequestBody User user) {
-        return null;
+    public ResponseEntity<User> update( @RequestBody UserDto userDto, @PathVariable String id )
+    {
+        User user = userService.update( userDto, id );
+        return ResponseEntity.ok(user);
     }
 
     @DeleteMapping("/{id}")

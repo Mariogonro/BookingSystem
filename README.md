@@ -58,3 +58,46 @@ Parte 2: Implementando tus documentos y repositorios para almacenar tus datos en
 - Se agrega la anotación @Service a el controlador respectivo e implementa la lógica para utilizar el servicio que te permite almacenar y consultar los datos desde el cluster de MongoDB.
 - Se ejecuta tu proyecto y utiliza Postman para verificar el correcto funcionamiento de los respectivos Endpoints y verifica que la información sea almacenada en MongoDB Atlas.
 
+## Proyecto Integrador: Implementar la seguridad del API con JWT
+Se implementa la capa de seguridad de tu API REST utilizando JWT:
+
+1. Se agrega las siguientes dependencias a tu pom.xml
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-tomcat</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>io.jsonwebtoken</groupId>
+			<artifactId>jjwt-api</artifactId>
+			<version>0.11.5</version>
+		</dependency>
+		<dependency>
+			<groupId>io.jsonwebtoken</groupId>
+			<artifactId>jjwt-impl</artifactId>
+			<version>0.11.5</version>
+		</dependency>
+		<dependency>
+			<groupId>io.jsonwebtoken</groupId>
+			<artifactId>jjwt-jackson</artifactId>
+			<version>0.11.5</version>
+		</dependency>
+
+2. Se implementa la clase SecurityConfiguration.
+3. Se implementa el AuthenticationController con sus respectivos Dtos.
+4. Se implementa el JWT Request Filter.
+
