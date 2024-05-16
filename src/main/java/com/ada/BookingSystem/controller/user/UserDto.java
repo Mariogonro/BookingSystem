@@ -1,32 +1,45 @@
 package com.ada.BookingSystem.controller.user;
 
 public class UserDto {
-    String name;
-    String lastName;
-    String email;
-    String password;
+    private final String name;
+    private final String lastName;
+    private final String email;
+    private final String password;
 
-    public UserDto()
-    {
+    public UserDto() {
+        this.name = "";
+        this.lastName = "";
+        this.email = "";
+        this.password = "";
     }
 
-    public String getName()
-    {
+    public UserDto(String name, String lastName, String email, String password) {
+        this.name = name;
+        this.lastName = lastName;
+        this.email = email;
+        this.password = password;
+    }
+
+    public UserDto(String name, String lastName, String email) {
+        this.name = name;
+        this.lastName = lastName;
+        this.email = email;
+        this.password = "";
+    }
+
+    public String getName() {
         return name;
     }
 
-    public String getLastName()
-    {
+    public String getLastName() {
         return lastName;
     }
 
-    public String getEmail()
-    {
+    public String getEmail() {
         return email;
     }
 
-    public String getPassword()
-    {
+    public String getPassword() {
         return password;
     }
 }

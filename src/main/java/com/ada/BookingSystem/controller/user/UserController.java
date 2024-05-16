@@ -34,7 +34,7 @@ public class UserController {
     }
 
     @PostMapping
-    public ResponseEntity<User> createProduct(@RequestBody UserDto userDto) {
+    public ResponseEntity<User> createUser(@RequestBody UserDto userDto) {
         URI createdUserUri = URI.create("");
         User user = userService.create(userDto);
         return ResponseEntity.created(createdUserUri).body(user);
